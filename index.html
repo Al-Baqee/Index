@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;height:100vh;overflow:hidden;font-family:'Poppins',sans-serif;display:flex;flex-direction:column;align-items:center;background:url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2') no-repeat center/cover;}
+.overlay{position:fixed;width:100%;height:100%;background:rgba(0,0,0,.4);backdrop-filter:blur(6px);z-index:-1;}
+h1{color:#fff;margin-top:120px;font-size:42px;font-family:'Pacifico',cursive;text-align:center;}
+.btn-container{display:flex;gap:40px;margin-top:80px;}
+.btn{padding:15px 30px;font-size:18px;border:none;border-radius:12px;cursor:pointer;}
+#yesBtn{background:#00c853;color:#fff;}#noBtn{background:#ff1744;color:#fff;position:relative;}
+#startScreen{position:fixed;width:100%;height:100%;background:rgba(0,0,0,.9);color:#fff;display:flex;justify-content:center;align-items:center;font-size:24px;z-index:10;cursor:pointer;}
+</style></head><body>
+<div id="startScreen" onclick="startExperience()">Tap to start 💖</div>
+<div class="overlay"></div>
+<iframe id="musicFrame" width="0" height="0" allow="autoplay"></iframe>
+<h1>Will you be mine? 💖</h1>
+<div class="btn-container">
+<button id="yesBtn" class="btn" onclick="yesClicked()">Yes 💖</button>
+<button id="noBtn" class="btn">No 😈</button>
+</div>
+<script>
+const noBtn=document.getElementById("noBtn");
+function moveButton(){const x=Math.random()*(innerWidth-noBtn.offsetWidth),y=Math.random()*(innerHeight-noBtn.offsetHeight);noBtn.style.position="absolute";noBtn.style.left=x+"px";noBtn.style.top=y+"px";const t=["No 😈","Are you sure? 😳","Really? 😭","Last chance 😭"];noBtn.innerText=t[Math.floor(Math.random()*t.length)];}
+noBtn.addEventListener("mouseover",moveButton);noBtn.addEventListener("touchstart",moveButton);
+function yesClicked(){document.body.innerHTML='<h1 style="color:white;margin-top:200px;font-family:Pacifico,cursive;">YAYYY 😭💖 I LOVE YOUUU</h1>';}
+function startExperience(){const id="KmDLj7i06KY";musicFrame.src=`https://www.youtube.com/embed/${id}?autoplay=1&loop=1&playlist=${id}`;startScreen.style.display="none";}
+</script></body></html>
